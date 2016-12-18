@@ -91,6 +91,17 @@ class ViewController: UIViewController {
         }
     }
     
+    //sugueで別のviewcontrollerに値を渡す
+    //このメソッドで渡す
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        
+//        if segue.identifier == "Image_Nabeatsu" {//遷移先のviewcontrollerのIdentiferで判定
+//            let secondViewController:SecondViewController = segue.destinationViewController as SecondViewController
+//            
+//            
+//
+//        }
+    //}
     
     //ACでオールクリア
     @IBAction func allclear_pushed(_ sender: UIButton) {
