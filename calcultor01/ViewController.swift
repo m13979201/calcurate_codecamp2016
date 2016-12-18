@@ -8,6 +8,15 @@
 
 import UIKit
 
+//世界のナベアツの表示判定・表示画像の呼び出しクラス
+class DecisionNabeatsu: NSObject {
+    
+    //世界のナベアツが出演すべきかを判定
+    
+    
+}
+
+
 class ViewController: UIViewController {
     
     
@@ -15,7 +24,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var text_label: UILabel!
     @IBOutlet weak var calc_label: UILabel!
     @IBOutlet weak var ans_label: UILabel!
-
+    
+    var num_decision_nabeatsu:Int = 0 //ナベアツ判定用
 
     
     override func viewDidLoad() {
@@ -52,26 +62,35 @@ class ViewController: UIViewController {
     //swift3から　AnyObject型　→Any型に変更
     //Any型はオブジェクトであればなんでも保管可能
     @IBAction func equal_pushed(_ sender: Any) {
-        if Int(prev_num_label.text!) != nil && Int(text_label.text!) != nil {   //両方になにがしかの文字列が入っていれば四則演算可能
+        //両方になにがしかの文字列が入っていれば四則演算可能
+        if Int(prev_num_label.text!) != nil && Int(text_label.text!) != nil {
             //四則演算の分岐
             if calc_label.text == "+" {
-                ans_label.text = String( Int(prev_num_label.text!)! + Int(text_label.text!)!)
+                num_decision_nabeatsu = Int(Int(prev_num_label.text!)! + Int(text_label.text!)!)
+                ans_label.text = String( num_decision_nabeatsu )
             }
             
             if calc_label.text == "-" {
-                ans_label.text = String( Int(prev_num_label.text!)! - Int(text_label.text!)!)
+                num_decision_nabeatsu = Int(Int(prev_num_label.text!)! - Int(text_label.text!)!)
+                ans_label.text = String( num_decision_nabeatsu )
             }
 
             if calc_label.text == "×" {
-                ans_label.text = String( Int(prev_num_label.text!)! * Int(text_label.text!)!)
+                num_decision_nabeatsu = Int(Int(prev_num_label.text!)! * Int(text_label.text!)!)
+                ans_label.text = String( num_decision_nabeatsu )
             }
 
-            if ans_label.text == "÷" {
-                text_label.text = String( Int(prev_num_label.text!)! / Int(text_label.text!)!)
+            if ans_label.text == "/" {
+                num_decision_nabeatsu = Int(Int(prev_num_label.text!)! / Int(text_label.text!)!)
+                ans_label.text = String( num_decision_nabeatsu )
             }
 
         }
+        if num_decision_nabeatsu % 3 == 0 { //3の倍数のとき世界のナベアツが出てくる
+            performSegue(withIdentifier: "callNabeatsu", sender: self)
+        }
     }
+    
     
     //ACでオールクリア
     @IBAction func allclear_pushed(_ sender: UIButton) {

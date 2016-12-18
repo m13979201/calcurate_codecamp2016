@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--calc_main-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="calcultor01" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="calc_main" id="BYZ-38-t0r" customClass="ViewController" customModule="calcultor01" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -137,7 +137,7 @@
                                     <constraint firstAttribute="height" constant="30" id="zBL-Zy-CqG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="÷"/>
+                                <state key="normal" title="/"/>
                                 <connections>
                                     <action selector="calc_sign_pushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v7F-VT-Duv"/>
                                 </connections>
@@ -310,11 +310,53 @@
                         <outlet property="calc_label" destination="zjE-uT-KWh" id="WlH-zW-B1X"/>
                         <outlet property="prev_num_label" destination="TT8-Dn-0uQ" id="jsX-Qx-DYn"/>
                         <outlet property="text_label" destination="53A-lE-2K1" id="gc7-lU-sap"/>
+                        <segue destination="Wbg-C5-XBa" kind="show" identifier="callNabeatsu" id="1Hl-Pf-fKd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-226.875" y="-10.56338028169014"/>
         </scene>
+        <!--Image_Nabeatsu-->
+        <scene sceneID="LFS-Kw-lRN">
+            <objects>
+                <viewController title="Image_Nabeatsu" id="Wbg-C5-XBa" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="i5R-gB-Gfl"/>
+                        <viewControllerLayoutGuide type="bottom" id="M7n-Od-HVo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3vt-e7-jxG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Nabeatsu_1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="54r-GK-xYu">
+                                <rect key="frame" x="16" y="85" width="288" height="398"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1a-M0-EXN">
+                                <rect key="frame" x="16" y="28" width="288" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="戻る" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkY-Ow-fUe">
+                                <rect key="frame" x="16" y="491" width="288" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tFT-RU-rm3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="714.375" y="-10.56338028169014"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Nabeatsu_1.jpg" width="450" height="450"/>
+    </resources>
 </document>
