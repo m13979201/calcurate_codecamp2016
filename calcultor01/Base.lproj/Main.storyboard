@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -317,10 +317,10 @@
             </objects>
             <point key="canvasLocation" x="-226.875" y="-10.56338028169014"/>
         </scene>
-        <!--Image_Nabeatsu-->
+        <!--SecondViewController-->
         <scene sceneID="LFS-Kw-lRN">
             <objects>
-                <viewController title="Image_Nabeatsu" id="Wbg-C5-XBa" sceneMemberID="viewController">
+                <viewController title="ImageViewController" id="Wbg-C5-XBa" userLabel="SecondViewController" customClass="SecondViewController" customModule="calcultor01" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i5R-gB-Gfl"/>
                         <viewControllerLayoutGuide type="bottom" id="M7n-Od-HVo"/>
@@ -340,20 +340,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="戻る" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkY-Ow-fUe">
-                                <rect key="frame" x="16" y="491" width="288" height="57"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NbH-81-Wjj">
+                                <rect key="frame" x="74" y="491" width="172" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <segue destination="lA1-25-eVK" kind="unwind" unwindAction="returnToTopWithSegueWithSegue:" id="4D9-gQ-EJz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="N1a-M0-EXN" id="qWS-BS-eFe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tFT-RU-rm3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="lA1-25-eVK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="714.375" y="-10.56338028169014"/>
+            <point key="canvasLocation" x="711" y="-11"/>
         </scene>
     </scenes>
     <resources>

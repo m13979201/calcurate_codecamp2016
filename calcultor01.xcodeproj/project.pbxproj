@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9693E2911E0630E500792EBC /* Nabeatsu_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9693E2901E0630E500792EBC /* Nabeatsu_1.jpg */; };
+		9693E2961E06649900792EBC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9693E2951E06649900792EBC /* SecondViewController.swift */; };
 		96B0C95F1DFACD02005942F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0C95E1DFACD02005942F1 /* AppDelegate.swift */; };
 		96B0C9611DFACD02005942F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0C9601DFACD02005942F1 /* ViewController.swift */; };
 		96B0C9641DFACD02005942F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96B0C9621DFACD02005942F1 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		9693E2901E0630E500792EBC /* Nabeatsu_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Nabeatsu_1.jpg; path = ../Nabeatsu_1.jpg; sourceTree = "<group>"; };
+		9693E2951E06649900792EBC /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = ../SecondViewController.swift; sourceTree = "<group>"; };
 		96B0C95B1DFACD02005942F1 /* calcultor01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calcultor01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B0C95E1DFACD02005942F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96B0C9601DFACD02005942F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		96B0C95D1DFACD02005942F1 /* calcultor01 */ = {
 			isa = PBXGroup;
 			children = (
+				9693E2951E06649900792EBC /* SecondViewController.swift */,
 				96B0C95E1DFACD02005942F1 /* AppDelegate.swift */,
 				96B0C9601DFACD02005942F1 /* ViewController.swift */,
 				96B0C9621DFACD02005942F1 /* Main.storyboard */,
@@ -274,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9693E2961E06649900792EBC /* SecondViewController.swift in Sources */,
 				96B0C9611DFACD02005942F1 /* ViewController.swift in Sources */,
 				96B0C95F1DFACD02005942F1 /* AppDelegate.swift in Sources */,
 			);

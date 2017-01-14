@@ -24,9 +24,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var text_label: UILabel!
     @IBOutlet weak var calc_label: UILabel!
     @IBOutlet weak var ans_label: UILabel!
-    
-    var num_decision_nabeatsu:Int = 0 //ナベアツ判定用
-
+    //ナベアツ判定用の変数
+    var num_decision_nabeatsu:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,17 +90,20 @@ class ViewController: UIViewController {
         }
     }
     
-    //sugueで別のviewcontrollerに値を渡す
-    //このメソッドで渡す
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        
-//        if segue.identifier == "Image_Nabeatsu" {//遷移先のviewcontrollerのIdentiferで判定
-//            let secondViewController:SecondViewController = segue.destinationViewController as SecondViewController
-//            
-//            
-//
-//        }
-    //}
+    //Segueで遷移する際に値を渡すメソッド
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //今は遷移先は一つしかない
+        //viewController callNabeatsuに遷移する場合
+        if segue.identifier == "callNabeatsu"{
+            //callNabeatsuをインスタンス化
+            let secondV = segue.destination as! SecondViewController
+            //値をSecondViewControllerの表示用変数resultCalに計算結果のnum_decision_nabeatsuの値を渡す
+            secondV.resultCal = String(self.num_decision_nabeatsu)
+        }
+    }
+    
+    //secondViewControllerから戻るための設定
+    @IBAction func returnToTopWithSegue(segue: UIStoryboardSegue) {}
     
     //ACでオールクリア
     @IBAction func allclear_pushed(_ sender: UIButton) {
@@ -111,8 +113,6 @@ class ViewController: UIViewController {
         ans_label.text = ""
 
     }
-    
-    
     
 
 }
