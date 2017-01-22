@@ -12,6 +12,7 @@ import UIKit
 class DecisionNabeatsu: NSObject {
     
     //世界のナベアツが出演すべきかを判定
+    //今回は未作成
     
     
 }
@@ -25,7 +26,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var calc_label: UILabel!
     @IBOutlet weak var ans_label: UILabel!
     //ナベアツ判定用の変数
-    var num_decision_nabeatsu:Int = 0
+    var num_decision_nabeatsu:Double = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,31 +63,36 @@ class ViewController: UIViewController {
     //Any型はオブジェクトであればなんでも保管可能
     @IBAction func equal_pushed(_ sender: Any) {
         //両方になにがしかの文字列が入っていれば四則演算可能
-        if Int(prev_num_label.text!) != nil && Int(text_label.text!) != nil {
+        if Double(prev_num_label.text!) != nil && Double(text_label.text!) != nil {
             //四則演算の分岐
             if calc_label.text == "+" {
-                num_decision_nabeatsu = Int(Int(prev_num_label.text!)! + Int(text_label.text!)!)
-                ans_label.text = String( num_decision_nabeatsu )
+                num_decision_nabeatsu = Double(Double(prev_num_label.text!)! + Double(text_label.text!)!)
+                ans_label.text = String( Int(num_decision_nabeatsu ))
             }
             
             if calc_label.text == "-" {
-                num_decision_nabeatsu = Int(Int(prev_num_label.text!)! - Int(text_label.text!)!)
-                ans_label.text = String( num_decision_nabeatsu )
+                num_decision_nabeatsu = Double(Double(prev_num_label.text!)! - Double(text_label.text!)!)
+                ans_label.text = String( Int(num_decision_nabeatsu ))
             }
 
             if calc_label.text == "×" {
-                num_decision_nabeatsu = Int(Int(prev_num_label.text!)! * Int(text_label.text!)!)
-                ans_label.text = String( num_decision_nabeatsu )
+                num_decision_nabeatsu = Double(Double(prev_num_label.text!)! * Double(text_label.text!)!)
+                ans_label.text = String( Int(num_decision_nabeatsu ))
             }
 
-            if ans_label.text == "/" {
-                num_decision_nabeatsu = Int(Int(prev_num_label.text!)! / Int(text_label.text!)!)
-                ans_label.text = String( num_decision_nabeatsu )
+            if calc_label.text == "÷" {
+//                num_decision_nabeatsu = Double(Double(prev_num_label.text!)! / Double(text_label.text!)!)
+//                ans_label.text = String( Int(num_decision_nabeatsu ))
+                num_decision_nabeatsu = Double(Double(prev_num_label.text!)! / Double(text_label.text!)!)
+                print( num_decision_nabeatsu )
+                ans_label.text = String( Int(num_decision_nabeatsu) )
             }
 
         }
-        if num_decision_nabeatsu % 3 == 0 { //3の倍数のとき世界のナベアツが出てくる
-            performSegue(withIdentifier: "callNabeatsu", sender: self)
+        //
+        //計算していないときにはナベアツがでないための処理を追加
+        if ans_label.text != "" && (Int(num_decision_nabeatsu) % 3 == 0) {
+                    performSegue(withIdentifier: "callNabeatsu", sender: self)
         }
     }
     
@@ -98,7 +104,7 @@ class ViewController: UIViewController {
             //callNabeatsuをインスタンス化
             let secondV = segue.destination as! SecondViewController
             //値をSecondViewControllerの表示用変数resultCalに計算結果のnum_decision_nabeatsuの値を渡す
-            secondV.resultCal = String(self.num_decision_nabeatsu)
+            secondV.resultCal = String(Int(self.num_decision_nabeatsu))
         }
     }
     
@@ -111,6 +117,7 @@ class ViewController: UIViewController {
         prev_num_label.text = ""
         calc_label.text = ""
         ans_label.text = ""
+        num_decision_nabeatsu = 0.0
 
     }
     

@@ -137,7 +137,7 @@
                                     <constraint firstAttribute="height" constant="30" id="zBL-Zy-CqG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="/"/>
+                                <state key="normal" title="÷"/>
                                 <connections>
                                     <action selector="calc_sign_pushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v7F-VT-Duv"/>
                                 </connections>
