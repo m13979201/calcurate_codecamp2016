@@ -81,17 +81,24 @@ class ViewController: UIViewController {
             }
 
             if calc_label.text == "÷" {
-//                num_decision_nabeatsu = Double(Double(prev_num_label.text!)! / Double(text_label.text!)!)
-//                ans_label.text = String( Int(num_decision_nabeatsu ))
-                num_decision_nabeatsu = Double(Double(prev_num_label.text!)! / Double(text_label.text!)!)
-                print( num_decision_nabeatsu )
-                ans_label.text = String( Int(num_decision_nabeatsu) )
+                if Double(text_label.text!)! == 0.0 {
+                    ans_label.text = String( "error!!" )
+                    
+                }else {
+                    num_decision_nabeatsu = Double(Double(prev_num_label.text!)! / Double(text_label.text!)!)
+                    ans_label.text = String( Int(num_decision_nabeatsu) )
+                }
             }
+                
 
         }
         //
         //計算していないときにはナベアツがでないための処理を追加
-        if ans_label.text != "" && (Int(num_decision_nabeatsu) % 3 == 0) {
+        if (ans_label.text == "error!!"){
+            ans_label.text = "error!!!"
+        }
+
+        else if ans_label.text != "" && (Int(num_decision_nabeatsu) % 3 == 0) {
                     performSegue(withIdentifier: "callNabeatsu", sender: self)
         }
     }
